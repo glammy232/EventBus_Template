@@ -2,7 +2,6 @@ using EventBus.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 
 namespace EventBus
 {
@@ -36,7 +35,7 @@ namespace EventBus
             List<IGlobalSubscriber> subscribers = Subscribers[typeof(TSubscriber)];
             foreach (IGlobalSubscriber subscriber in subscribers)
             {
-                action.Invoke(subscriber.ConvertTo<TSubscriber>());// было subscriber as TSubscriber
+                action.Invoke(subscriber.ConvertTo<TSubscriber>());// ГЎГ»Г«Г® subscriber as TSubscriber
             }
         }
         public static List<Type> GetSubscribersTypes(IGlobalSubscriber globalSubscriber)
